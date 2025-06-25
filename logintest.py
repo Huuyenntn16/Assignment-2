@@ -1,6 +1,8 @@
 from time import sleep
 
-def login(driver):
+class logintest(Basetest):
+def login(self):
+    driver = self.driver
   
     username_input = driver.find_element("name", "username")
     username_input.send_keys("Admin")
