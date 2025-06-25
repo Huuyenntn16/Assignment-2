@@ -1,6 +1,4 @@
 from time import sleep
-# def test_title(driver):
-#     assert "OrangeHRM" in driver.title
 
 def test_login_success(driver):
   
