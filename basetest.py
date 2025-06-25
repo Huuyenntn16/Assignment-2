@@ -1,12 +1,12 @@
 import pytest
 from selenium import webdriver
-from time import sleep
 
-@pytest.fixture
-def driver():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("https://opensource-demo.orangehrmlive.com/")
-    sleep(3)
-    yield driver
-    driver.quit()
+class Basetest:
+
+  @pytest.fixture
+  def setup(self):
+    self.driver = webdriver.Chrome()
+    self.driver.maximize_window()
+    self.driver.get("https://opensource-demo.orangehrmlive.com/")
+    yield
+    self.driver.quit()
