@@ -1,7 +1,7 @@
 from time import sleep
 from basetest import Basetest
 
-class logintest(Basetest):
+class logintest(Basetest): 
   def login(self):
     driver = self.driver
   
