@@ -19,4 +19,5 @@ class logintest(Basetest):
    
     driver.implicitly_wait(10)
     assert "dashboard" in driver.current_url.lower()
-    sleep(10) 
+
+
