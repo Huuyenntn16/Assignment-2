@@ -1,23 +1,8 @@
-from time import sleep
-from basetest import Basetest
+from Pages.base_page import BaseTest
+from Pages.login_page import LoginPage
 
-class logintest(Basetest): 
-  def login(self):
-    driver = self.driver
-  
-    username_input = driver.find_element("name", "username")
-    username_input.send_keys("Admin")
-
-    
-    password_input = driver.find_element("name", "password")
-    password_input.send_keys("admin123")
-
-    
-    login_button = driver.find_element("xpath", "//button[@type='submit']")
-    login_button.click()
-
-   
-    driver.implicitly_wait(10)
-    assert "dashboard" in driver.current_url.lower()
-
-
+class TestLoginWeb(BaseTest):
+    def test_login_valid(self):
+        login_page = LoginPage(self.driver)
+        login_page.dologin()
+        
