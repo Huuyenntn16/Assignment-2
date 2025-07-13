@@ -2,22 +2,37 @@ import json
 import os
 
 class ConfigReader:
-    _config = None
+    def __init__(self, base_url, username, password, loginapi):
+        self.base_url = base_url
+        self.username = username
+        self.password = password
+        self.loginapi = loginapi
 
     @staticmethod
-    def get_config():
-        path =os.path.join(os.path.dirname(os.path.dirname(__file__)), "url.json")
-        with open(path, "r") as file:
-            return json.load(file)
+    def load_config(path='url.json'):
+
+        with open(path, 'r') as file:
+            data = json.load(file)
+
+        return ConfigReader(
+            base_url=data["url"],
+            username=data["username"],
+            password=data["password"],
+            loginapi=data["loginapi"],
+        )
         
-    @staticmethod
-    def get_url():
-        return ConfigReader.load_config()['url']
     
-    @staticmethod
-    def get_usename():
-        return ConfigReader.load_config()['usename']
+    def get_url(self):
+        return self.base_url
     
-    @staticmethod
-    def get_password():
-        return ConfigReader.load_config()['password']
+    
+    def get_username(self):
+        return self.username
+    
+    
+    def get_password(self):
+        return self.password
+    
+    def get_login_api(self):
+        return self.loginapi
+    
