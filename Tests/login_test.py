@@ -13,12 +13,12 @@ class TestLogin(BaseTest):
         config = ConfigReader.load_config()
         
         time.sleep(5)
-        login_page.allure_screenshot("login_success_screenshot")
+        self.allure_screenshot("login_success_screenshot")
 
         login_page.login(config.username, config.password)
 
         time.sleep(5)
-        login_page.allure_screenshot("dashboard_screenshot")
+        self.allure_screenshot("dashboard_screenshot")
 
         self.teardown()
         

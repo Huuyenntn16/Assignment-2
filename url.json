@@ -4,5 +4,6 @@
     "password": "admin123",
 
     "loginapi":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-    "getListCalendar":"/list-calendar"
+    "newsFeedAPI":"https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz",
+    "actionLike":"https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/buzz/shares/19/likes"
 }

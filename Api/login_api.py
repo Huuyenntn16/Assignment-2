@@ -16,7 +16,7 @@ class LoginAPI(basepage):
             "Content-Type": "application/json"
         }
 
-        response = requests.post(api, json=payload, headers=headers)
+        response = requests.get(api, json=payload, headers=headers)
 
         print("Status code:", response.status_code)
         print("Response text:", response.text)
